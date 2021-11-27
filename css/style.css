@@ -1,0 +1,353 @@
+
+/* Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variables  */
+
+:root{
+    --main-color: #e02f6b;
+    --blue: #0000ff;
+    --blue-dark: #18293c;
+    --orange: #ffa500;
+    --green-yellow: #cddc39;
+    --pink-light: #efa2b4;
+    --cyan-light: #aef1ee;
+    --white: #ffffff;
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+    --backdrop-filter-blur: blur(5px);
+}
+
+/* All body  */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+::before,
+::after{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light));
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--blue-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    padding: 5vh 15px;
+}
+body::before{
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--green-yellow);
+    z-index: -1;
+    opacity: 0.12;
+}
+a{
+    text-decoration: none;
+}
+h1,h2{
+    font-weight: 600;
+}
+h3,h4,h5,h6{
+    font-weight: 500;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+section{
+    background-color: var(--white-alpha-25);
+    border:1px solid var(--white-alpha-40);
+    min-height: 90vh;
+    border-radius: 30px;
+    backdrop-filter: var(--backdrop-filter-blur);
+}
+.main{
+    max-width: 1130px;
+    margin: auto;
+}
+.container{
+    
+    padding: 0 40px;
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-wrap:wrap;
+}
+.align-items-center{
+    align-items: center;
+}
+/* logo css  */
+.logo{
+    width:inherit;
+    height:inherit;
+    font-size: 20px;
+    display:grid;
+    position: absolute;
+    top: -1px;    
+}
+.logo h1{
+    position: absolute;
+    letter-spacing: 0.3rem;
+}
+.logo h1:first-child{
+    color: var(--main-color);
+    background-color: rgba(255, 255, 255, 0.60);
+}
+.logo h1:last-child{
+    color: #18293c;
+    clip-path: polygon(85% 0, 100% 0, 100% 100%, 15% 100%);
+    background-color: rgba(255, 255, 255, 0.90);
+}
+.logo h1:last-child:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.logo h1:first-child:hover ~ h1{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+/* Custom Scrollbar  */
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+#ip {
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+/* Button CSS  */
+.btn{
+    line-height: 1.5;
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    padding: 10px 28px;
+    display: inline-block;
+    border-radius: 30px;
+    color: var(--main-color);
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.btn:hover::before{
+    width:100%
+}
+.btn:hover{
+    color: var(--white);
+}
+/* css for home section  */
+
+.home-section{
+    display: flex;
+    padding: 110px 0;
+}
+.home-text{
+    width: 50%;
+    padding: 15px;
+    
+}
+.home-img{
+    width: 50%;
+    padding: 15px;
+    
+}
+.home-text p{
+    font-size: 20px;
+    font-weight: 500;
+}
+/* .home-text h1{
+    font-size: 50px;
+    text-transform: capitalize;
+} */
+
+/* svg anim  */
+#head{
+    animation: fill 0.5s ease forwards 4.5s;
+}
+#head path:nth-child(1){
+    stroke-dasharray: 298;
+    stroke-dashoffset: 298;
+    animation: line-anim 3s ease forwards;
+}
+#head path:nth-child(2){
+    stroke-dasharray: 294;
+    stroke-dashoffset: 294;
+    animation: line-anim 3s ease forwards 0.3s;
+}
+#head path:nth-child(3){
+    stroke-dasharray: 272;
+    stroke-dashoffset: 272;
+    animation: line-anim 3s ease forwards 0.6s;
+}
+#head path:nth-child(4){
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: line-anim 3s ease forwards 0.9s;
+}
+#head path:nth-child(5){
+    stroke-dasharray: 171;
+    stroke-dashoffset: 171;
+    animation: line-anim 3s ease forwards 1.2s;
+}
+#head path:nth-child(6){
+    stroke-dasharray: 310;
+    stroke-dashoffset: 310;
+    animation: line-anim 3s ease forwards 1.5s;
+
+}
+#head path:nth-child(7){
+    stroke-dasharray: 252;
+    stroke-dashoffset: 252;
+    animation: line-anim 3s ease forwards 1.8s;
+}
+#head path:nth-child(8){
+    stroke-dasharray: 264;
+    stroke-dashoffset: 264;
+    animation: line-anim 3s ease forwards 2.1s;
+}
+#head path:nth-child(9){
+    stroke-dasharray: 369;
+    stroke-dashoffset: 369;
+    animation: line-anim 4s ease forwards 0s;
+}
+#head path:nth-child(10){
+    stroke-dasharray: 272;
+    stroke-dashoffset: 272;
+    animation: line-anim 4s ease forwards 0.3s;
+}
+#head path:nth-child(11){
+    stroke-dasharray: 312;
+    stroke-dashoffset: 312;
+    animation: line-anim 4s ease forwards 0.6s;
+}
+#head path:nth-child(12){
+    stroke-dasharray: 171;
+    stroke-dashoffset: 171;
+    animation: line-anim 4s ease forwards 0.9s;
+}
+#head path:nth-child(13){
+    stroke-dasharray: 376;
+    stroke-dashoffset: 376;
+    animation: line-anim 4s ease forwards 1.2s;
+}
+@keyframes line-anim {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+/* @keyframes fill {
+    from{
+        fill: transparent;
+    }
+    to{
+        fill:#18293c;
+    }
+} */
+.home-text h2{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 300;
+    margin: 0 0 30px;
+}
+.home-text h2 span::before{
+    content: '';
+    animation: animate-h2 infinite 12s;
+}
+@keyframes animate-h2 {
+    0%{
+        content: 'student from NIT Surathkal';
+    }
+    50%{
+        content: 'creative designer';
+    }
+    75%{
+        content: 'efficient developer';
+    }
+    100%{
+        content: 'student from NIT Surathkal';
+    }
+}
+.home-text .btn{
+    margin: 0 15px 15px 0;
+}
+/* .img-box{
+    max-width: 360px;
+    background-color: var(--white-alpha-25);
+    border-radius: 50%;
+    border: 8px solid var(--white-alpha-25);
+    margin: auto;
+}
+.img-box img{
+    width: 100%;
+    border-radius: 50%;
+} */
+/* minion css */
+
+.minion {
+
+    background-image: url(https://res.cloudinary.com/ramps/image/upload/v1624388856/Minions-body_k18umu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 348px;
+    height: 553.7px;
+    margin-left: 50px;
+}
+
+.eyes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 105px;
+}
+
+.eye {
+    width: 79.7px;
+    height: 68px;
+    border-radius: 50%;
+    float: left;
+    margin: 20px;
+    text-align: center;
+}
+
+.ball {
+    background: url(https://res.cloudinary.com/ramps/image/upload/v1624389102/minion-eye_is04cu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 42.3px;
+    height: 42.3px;
+    border-radius: 50%;
+}
